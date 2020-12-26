@@ -1,0 +1,23 @@
+@import "@/styles/variable.less";
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 99vw;
+  height: 48vw;
+  margin-bottom: 20px;
+  .key {
+    flex: 1 1 33vw;
+    box-sizing: border-box;
+    height: 12vw;
+    line-height: 12vw;
+    text-align: center;
+    color: #707474;
+    font-size: @font-size-lg;
+    &.key:active {
+      border: 1px solid @color-orange;
+      box-shadow: 0 0 10px @color-orange;
+      color: #ffffff;
+    }
+  }
+}
