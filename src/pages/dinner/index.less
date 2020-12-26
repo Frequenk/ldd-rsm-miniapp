@@ -1,0 +1,43 @@
+@import "@/styles/variable.less";
+
+.container {
+  background-color: #2f2f2f;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  .padding-container {
+    height: 100vh;
+    width: 95vw;
+    .company {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        background-color: #f1f1f1;
+        border-radius: 150px;
+        margin: @font-size-xs / 2 0px;
+      }
+      .name {
+        font-size: @font-size-md;
+        font-weight: bold;
+      }
+    }
+    .form-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px dashed gray;
+      flex-wrap: wrap;
+    }
+  }
+}
