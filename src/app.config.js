@@ -1,7 +1,6 @@
 module.exports = {
-  pages: ['pages/index/index'],
+  pages: ['pages/index/index', 'pages/login/index', 'pages/dinner/index'],
   window: {
-    navigationBarTitleText: '这是一个标题',
-    navigationBarBackgroundColor: '#282c34'
+    navigationBarBackgroundColor: '#2f2f2f'
   }
 };

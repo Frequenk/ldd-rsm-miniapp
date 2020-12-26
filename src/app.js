@@ -1,4 +1,5 @@
-import './app.css';
+import './app.less';
+import 'annar/dist/annar.css';
 
 const App = props => props.children;
 
