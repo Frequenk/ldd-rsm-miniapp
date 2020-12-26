@@ -1,8 +1,8 @@
 {
-  "name": "ldd-rsm-miniapp",
+  "name": "ldd-rms-miniapp",
   "private": true,
   "version": "1.0.0",
-  "description": "ldd-rsm-miniapp by remax",
+  "description": "ldd-rms-miniapp by remax",
   "main": "index.jsx",
   "keywords": [],
   "author": "fuyikun <1281363146@qq.com>",
