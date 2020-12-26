@@ -1,4 +1,4 @@
-# ldd-rsm-miniapp
+# ldd-rms-miniapp
 
 ## 雷多多-餐厅管理系统-点餐小程序
 
