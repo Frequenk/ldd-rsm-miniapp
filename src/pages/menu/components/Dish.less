@@ -1,0 +1,41 @@
+@import "@/styles/variable.less";
+
+.dish {
+  width: 75vw;
+  height: 30vw;
+  background-color: #ffffff;
+  border-radius: 2.5vw;
+  margin: 2.5vw;
+  display: flex;
+  .img {
+    height: 30vw;
+    width: 30vw;
+    border-radius: 2.5vw;
+  }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    margin-left: 2vw;
+    width: 43vw;
+    .name {
+      font-size: @font-size-md;
+      font-weight: bold;
+    }
+    .dish_num {
+      font-size: @font-size-xs;
+      color: @color-gray;
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 43vw;
+      .price {
+        font-size: @font-size-xs;
+        font-weight: bold;
+        color: red;
+      }
+    }
+  }
+}

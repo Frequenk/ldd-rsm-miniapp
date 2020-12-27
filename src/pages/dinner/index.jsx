@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Image } from "remax/wechat";
 import styles from "./index.less";
 import { Icon, Button, Form, Input, Stepper } from "annar";
@@ -6,7 +6,7 @@ import { Divider } from "@/components";
 import SelectGroup from "./components/SelectGroup";
 
 const Dinner = () => {
-  const [number, setNumber] = React.useState(1);
+  const [number, setNumber] = useState(1);
   return (
     <View className={styles.container}>
       <View className={styles["padding-container"]}>

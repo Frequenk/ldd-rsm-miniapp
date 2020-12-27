@@ -18,6 +18,7 @@ export default () => {
           开始1
         </View>
         <Button
+          size="superlarge"
           onTap={() => {
             reLaunch({
               url: "/pages/login/index",
@@ -27,6 +28,7 @@ export default () => {
           去登录页面
         </Button>
         <Button
+          size="superlarge"
           onTap={() => {
             reLaunch({
               url: "/pages/dinner/index",
@@ -36,6 +38,7 @@ export default () => {
           去开台页面
         </Button>
         <Button
+          size="superlarge"
           onTap={() => {
             reLaunch({
               url: "/pages/captcha/index",
@@ -44,11 +47,21 @@ export default () => {
         >
           去验证页面
         </Button>
+        <Button
+          size="superlarge"
+          onTap={() => {
+            reLaunch({
+              url: "/pages/menu/index",
+            });
+          }}
+        >
+          去菜单页面
+        </Button>
       </View>
 
-      {/* {redirectTo({
-        url: "/pages/captcha/index",
-      })} */}
+      {reLaunch({
+        url: "/pages/menu/index",
+      })}
     </View>
   );
 };
