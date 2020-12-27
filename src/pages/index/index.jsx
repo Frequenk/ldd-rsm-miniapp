@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text, Image } from "remax/wechat";
 import styles from "./index.less";
-import { redirectTo } from "remax/one";
+import { reLaunch } from "remax/one";
 import { Button } from "annar";
 
 export default () => {
@@ -19,7 +19,7 @@ export default () => {
         </View>
         <Button
           onTap={() => {
-            redirectTo({
+            reLaunch({
               url: "/pages/login/index",
             });
           }}
@@ -28,18 +28,27 @@ export default () => {
         </Button>
         <Button
           onTap={() => {
-            redirectTo({
+            reLaunch({
               url: "/pages/dinner/index",
             });
           }}
         >
           去开台页面
         </Button>
+        <Button
+          onTap={() => {
+            reLaunch({
+              url: "/pages/captcha/index",
+            });
+          }}
+        >
+          去验证页面
+        </Button>
       </View>
 
-      {redirectTo({
+      {/* {redirectTo({
         url: "/pages/captcha/index",
-      })}
+      })} */}
     </View>
   );
 };
