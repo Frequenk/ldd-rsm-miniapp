@@ -7,7 +7,6 @@ import SelectGroup from "./components/SelectGroup";
 
 const Dinner = () => {
   const [number, setNumber] = React.useState(1);
-
   return (
     <View className={styles.container}>
       <View className={styles["padding-container"]}>
@@ -41,7 +40,7 @@ const Dinner = () => {
             prefix={<Icon type="write" color="gray" />}
             placeholder="口味要求、忌口等（可不填）"
             style={{
-              backgroundColor: "#2f2f2f",
+              backgroundColor: "#181d1f",
               border: "none",
               width: "450px",
             }}

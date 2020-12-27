@@ -1,3 +1,5 @@
+@import "@/styles/variable.less";
+
 .select-group {
   display: flex;
   justify-content: space-around;
@@ -6,12 +8,13 @@
   .select-button {
     flex: 1 1 17.5vw;
     margin: 2.5vw 2.5vw;
-    background-color: #2f2f2f;
-    border: 1px solid #f56330;
-    color: #f56330;
+    background-color: @color-darkblue;
+    border: 1px solid @color-orange;
+    color: @color-orange;
     &.selected-button {
-      background-color: #f56330;
+      background-color: @color-orange;
       color: #ffffff;
+      box-shadow: 0 0 10px @color-orange;
     }
   }
 }
