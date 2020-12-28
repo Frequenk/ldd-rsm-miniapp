@@ -7190,6 +7190,11 @@ websocket-extensions@>=0.1.1:
   resolved "https://registry.npm.taobao.org/websocket-extensions/download/websocket-extensions-0.1.4.tgz#7f8473bc839dfd87608adb95d7eb075211578a42"
   integrity sha1-f4RzvIOd/YdgituV1+sHUhFXikI=
 
+wechat-request@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.npm.taobao.org/wechat-request/download/wechat-request-2.3.0.tgz#deea4e632f876f19f2844cba8fb50c6c297c159b"
+  integrity sha1-3upOYy+HbxnyhEy6j7UMbCl8FZs=
+
 which-module@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/which-module/download/which-module-2.0.0.tgz#d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a"
