@@ -59,9 +59,9 @@ export default () => {
         </Button>
       </View>
 
-      {reLaunch({
+      {/* {reLaunch({
         url: "/pages/menu/index",
-      })}
+      })} */}
     </View>
   );
 };

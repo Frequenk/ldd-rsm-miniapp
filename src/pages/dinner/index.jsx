@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, Image } from "remax/wechat";
+import { View } from "remax/wechat";
 import styles from "./index.less";
-import { Icon, Button, Form, Input, Stepper } from "annar";
+import { Icon, Button, Input, Stepper } from "annar";
 import { Divider } from "@/components";
 import SelectGroup from "./components/SelectGroup";
+import { CommonContext } from "@/app";
 
 const Dinner = () => {
   const [number, setNumber] = useState(1);
@@ -28,7 +29,9 @@ const Dinner = () => {
             bgColor="#F56330"
             color="#ffffff"
           />
-          <SelectGroup selectedNumber={number} setNumber={setNumber} />
+          <CommonContext.Provider value={{ selectedNumber: number, setNumber }}>
+            <SelectGroup />
+          </CommonContext.Provider>
         </View>
         <View className={styles["form-item"]}>
           <View>桌台：</View>

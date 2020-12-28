@@ -4,23 +4,22 @@ import Key from "./Key";
 import styles from "./styles.less";
 import { Icon } from "annar";
 
-const Keyboard = ({ setNumber }) => {
+const Keyboard = () => {
   return (
     <View className={styles.keyboard}>
-      <Key keyNumber={1} setNumber={setNumber} />
-      <Key keyNumber={2} setNumber={setNumber} />
-      <Key keyNumber={3} setNumber={setNumber} />
-      <Key keyNumber={4} setNumber={setNumber} />
-      <Key keyNumber={5} setNumber={setNumber} />
-      <Key keyNumber={6} setNumber={setNumber} />
-      <Key keyNumber={7} setNumber={setNumber} />
-      <Key keyNumber={8} setNumber={setNumber} />
-      <Key keyNumber={9} setNumber={setNumber} />
+      <Key keyNumber={1} />
+      <Key keyNumber={2} />
+      <Key keyNumber={3} />
+      <Key keyNumber={4} />
+      <Key keyNumber={5} />
+      <Key keyNumber={6} />
+      <Key keyNumber={7} />
+      <Key keyNumber={8} />
+      <Key keyNumber={9} />
       <Key />
-      <Key keyNumber={0} setNumber={setNumber} />
+      <Key keyNumber={0} />
       <Key
         keyNumber={<Icon type="back_android" color="#707474" size="50px" />}
-        setNumber={setNumber}
         type="delete"
       />
     </View>
