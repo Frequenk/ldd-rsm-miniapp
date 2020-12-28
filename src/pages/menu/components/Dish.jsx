@@ -1,12 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { View, Image } from "remax/wechat";
 import styles from "./Dish.less";
-import { Stepper } from "annar";
+import { Stepper, Icon } from "annar";
+import { ShoppingCarContext } from "@/app";
 
 const Dish = ({ dish }) => {
   const { name, img, price, dish_num } = dish;
-  const [number, setNumber] = useState(1);
-
+  const [number, setNumber] = useState(0);
+  const { shoppingCarDishes, setShoppingCarDishes } = useContext(
+    ShoppingCarContext
+  );
+  const onChange = (val) => {
+    setNumber(val);
+    // 编辑购物车内的菜品信息
+    for (let i = 0; i < shoppingCarDishes.length; i++) {
+      // 如果菜品已在购物车中
+      if (shoppingCarDishes[i].dish.id === dish.id) {
+        // 如果菜品数量为0，从购物车中删除该菜品
+        if (val === 0) {
+          setShoppingCarDishes([
+            ...shoppingCarDishes.slice(0, i),
+            ...shoppingCarDishes.slice(i + 1),
+          ]);
+          return;
+        }
+        // 更改购物车中该菜品的数量
+        setShoppingCarDishes([
+          ...shoppingCarDishes.slice(0, i),
+          ...shoppingCarDishes.slice(i + 1),
+          { dish: dish, number: val },
+        ]);
+        return;
+      }
+    }
+    // 向购物车添加菜品
+    setShoppingCarDishes([...shoppingCarDishes, { dish: dish, number: val }]);
+  };
   return (
     <View className={styles.dish}>
       <Image src={img} className={styles.img} />
@@ -15,16 +44,23 @@ const Dish = ({ dish }) => {
         <View className={styles["dish_num"]}>库存：{dish_num}</View>
         <View className={styles.bottom}>
           <View className={styles.price}>￥{price}</View>
-          <Stepper
-            min={1}
-            ma={99}
-            shape="circle"
-            value={number}
-            onChange={(val) => setNumber(val)}
-            bgColor="#F56330"
-            color="#ffffff"
-            size="small"
-          />
+
+          {number === 0 ? (
+            <View onTap={() => onChange(1)} className={styles["add-button"]}>
+              <Icon type="add" size="36px" color="#ffffff" />
+            </View>
+          ) : (
+            <Stepper
+              min={0}
+              max={dish_num}
+              shape="circle"
+              value={number}
+              onChange={(val) => onChange(val)}
+              bgColor="#F56330"
+              color="#ffffff"
+              size="small"
+            />
+          )}
         </View>
       </View>
     </View>

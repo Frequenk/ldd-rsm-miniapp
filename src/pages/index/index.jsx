@@ -5,6 +5,16 @@ import { reLaunch } from "remax/one";
 import { Button } from "annar";
 
 export default () => {
+  const gogo = () => {
+    if (1) {
+      {
+        reLaunch({
+          url: "/pages/menu/index",
+        });
+      }
+    }
+  };
+
   return (
     <View className={styles.app}>
       <View className={styles.header}>
@@ -59,9 +69,7 @@ export default () => {
         </Button>
       </View>
 
-      {/* {reLaunch({
-        url: "/pages/menu/index",
-      })} */}
+      {gogo()}
     </View>
   );
 };
