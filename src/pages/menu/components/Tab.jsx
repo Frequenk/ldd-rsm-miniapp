@@ -10,7 +10,13 @@ const Tab = ({ tab, selectedTab, setSelectedTab }) => {
       }`}
       onTap={setSelectedTab}
     >
-      {name}
+      <View
+        className={`${styles.text} ${
+          id === selectedTab && styles["tab-selected-text"]
+        }`}
+      >
+        {name}
+      </View>
     </View>
   );
 };
