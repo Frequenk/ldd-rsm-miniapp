@@ -4,7 +4,7 @@ import styles from "./Dish.less";
 import { Stepper, Icon } from "annar";
 import { ShoppingCarContext } from "@/app";
 
-const Dish = ({ dish }) => {
+const Dish = ({ data: { dish } }) => {
   const { name, img, price, dish_num } = dish;
   const { shoppingCarDishes, setShoppingCarDishes } = useContext(
     ShoppingCarContext
@@ -41,15 +41,10 @@ const Dish = ({ dish }) => {
       <Image src={img} className={styles.img} />
       <View className={styles.detail}>
         <View className={styles.name}>{name}</View>
-        <View className={styles["dish_num"]}>库存：{dish_num}</View>
         <View className={styles.bottom}>
           <View className={styles.price}>￥{price}</View>
-
-          {number === 0 ? (
-            <View onTap={() => onChange(1)} className={styles["add-button"]}>
-              <Icon type="add" size="36px" color="#ffffff" />
-            </View>
-          ) : (
+          <View>
+            <View className={styles["dish_num"]}>库存：{dish_num}</View>
             <Stepper
               min={0}
               max={dish_num}
@@ -60,7 +55,7 @@ const Dish = ({ dish }) => {
               color="#ffffff"
               size="small"
             />
-          )}
+          </View>
         </View>
       </View>
     </View>
