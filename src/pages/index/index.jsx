@@ -6,13 +6,13 @@ import { Button } from "annar";
 
 export default () => {
   const gogo = () => {
-    if (1) {
-      {
-        reLaunch({
-          url: "/pages/menu/index",
-        });
-      }
-    }
+    // if (1) {
+    //   {
+    //     reLaunch({
+    //       url: "/pages/menu/index",
+    //     });
+    //   }
+    // }
   };
 
   return (

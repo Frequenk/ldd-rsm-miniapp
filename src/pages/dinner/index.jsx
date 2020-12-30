@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View } from "remax/wechat";
 import styles from "./index.less";
 import { Icon, Button, Input, Stepper } from "annar";
-import { Divider } from "@/components";
+import Divider from "@/components/Divider";
 import SelectGroup from "./components/SelectGroup";
 import { CommonContext } from "@/app";
 
