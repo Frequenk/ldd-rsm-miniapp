@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "remax/wechat";
+import { View } from "remax/one";
 import Tabs from "./components/Tabs";
 import styles from "./index.less";
 import { leftData, rightData } from "./fakeData.js";

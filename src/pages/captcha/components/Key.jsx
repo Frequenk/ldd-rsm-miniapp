@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View } from "remax/wechat";
+import { View } from "remax/one";
 import styles from "./styles.less";
 import { CommonContext } from "@/app";
 

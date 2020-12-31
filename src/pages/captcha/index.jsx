@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View } from "remax/wechat";
+import { View } from "remax/one";
 import styles from "./index.less";
 import Code from "./components/Code";
 import Keyboard from "./components/Keyboard";

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, Text } from "remax/wechat";
+import React from "react";
+import { View } from "remax/one";
 import styles from "./Code.less";
 
 const Code = ({ number }) => {

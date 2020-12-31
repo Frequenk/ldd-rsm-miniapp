@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "remax/wechat";
+import { View } from "remax/one";
 import Key from "./Key";
 import styles from "./styles.less";
 import { Icon } from "annar";

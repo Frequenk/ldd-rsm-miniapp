@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text } from "remax/wechat";
+import { View } from "remax/one";
 import styles from "./Tabs.less";
 import Tab from "./Tab";
 import Dish from "./Dish";

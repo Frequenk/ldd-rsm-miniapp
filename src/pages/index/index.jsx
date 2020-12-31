@@ -1,7 +1,6 @@
 import * as React from "react";
-import { View, Text, Image } from "remax/wechat";
+import { View, Text, Image, reLaunch } from "remax/one";
 import styles from "./index.less";
-import { reLaunch } from "remax/one";
 import { Button } from "annar";
 
 export default () => {
@@ -9,7 +8,7 @@ export default () => {
     // if (1) {
     //   {
     //     reLaunch({
-    //       url: "/pages/menu/index",
+    //       url: "/pages/confirm-order/index",
     //     });
     //   }
     // }

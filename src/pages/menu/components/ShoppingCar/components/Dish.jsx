@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { View, Image } from "remax/wechat";
+import { View, Image } from "remax/one";
 import styles from "./Dish.less";
 import { Stepper, Icon } from "annar";
 import { ShoppingCarContext } from "@/app";

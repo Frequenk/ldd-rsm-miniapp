@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "remax/wechat";
+import { View } from "remax/one";
 import styles from "./Tab.less";
 const Tab = ({ tab, selectedTab, setSelectedTab }) => {
   const { id, name } = tab;
