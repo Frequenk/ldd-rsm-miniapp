@@ -1,0 +1,27 @@
+@import "@/styles/variable.less";
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  .left {
+    width: 20%;
+    height: 100%;
+    overflow: auto;
+    background-color: #f6f7f9;
+  }
+  .right {
+    width: 80%;
+    height: 100%;
+
+    overflow: auto;
+    .bottom {
+      height: 27.5vw;
+      .text {
+        padding: 2.5vw 0px 5vw;
+        color: @color-gray;
+        text-align: center;
+      }
+    }
+  }
+}

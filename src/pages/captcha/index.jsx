@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { View, Text } from "remax/wechat";
+import { View } from "remax/one";
 import styles from "./index.less";
 import Code from "./components/Code";
 import Keyboard from "./components/Keyboard";
+import { CommonContext } from "@/app";
 
 const Captcha = () => {
   const [number, setNumber] = useState({
@@ -20,7 +21,9 @@ const Captcha = () => {
         </View>
         <Code number={number} />
       </View>
-      <Keyboard setNumber={setNumber} />
+      <CommonContext.Provider value={{ setNumber }}>
+        <Keyboard />
+      </CommonContext.Provider>
     </View>
   );
 };

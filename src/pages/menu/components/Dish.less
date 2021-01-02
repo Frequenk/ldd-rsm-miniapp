@@ -1,0 +1,51 @@
+@import "@/styles/variable.less";
+
+.dish {
+  width: 75vw;
+  height: 30vw;
+  background-color: #ffffff;
+  border-radius: 2.5vw;
+  margin: 2.5vw;
+  display: flex;
+  box-shadow: 0 0 10px @color-gray;
+  .img {
+    height: 30vw;
+    width: 30vw;
+    border-radius: 2.5vw;
+  }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    margin: 0px 2vw;
+    width: 41vw;
+    .name {
+      font-size: @font-size-md;
+      font-weight: bold;
+    }
+    .dish_num {
+      font-size: @font-size-xs;
+      color: @color-gray;
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .price {
+        font-size: @font-size-xs;
+        font-weight: bold;
+        color: red;
+      }
+      .add-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 48px;
+        background-color: #f56330;
+      }
+    }
+  }
+}

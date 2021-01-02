@@ -1,13 +1,13 @@
-import React from "react";
-import { View, Text, Image } from "remax/wechat";
+import React, { useState } from "react";
+import { View } from "remax/one";
 import styles from "./index.less";
-import { Icon, Button, Form, Input, Stepper } from "annar";
-import { Divider } from "@/components";
+import { Icon, Button, Input, Stepper } from "annar";
+import Divider from "@/components/Divider";
 import SelectGroup from "./components/SelectGroup";
+import { CommonContext } from "@/app";
 
 const Dinner = () => {
-  const [number, setNumber] = React.useState(1);
-
+  const [number, setNumber] = useState(1);
   return (
     <View className={styles.container}>
       <View className={styles["padding-container"]}>
@@ -29,7 +29,9 @@ const Dinner = () => {
             bgColor="#F56330"
             color="#ffffff"
           />
-          <SelectGroup selectedNumber={number} setNumber={setNumber} />
+          <CommonContext.Provider value={{ selectedNumber: number, setNumber }}>
+            <SelectGroup />
+          </CommonContext.Provider>
         </View>
         <View className={styles["form-item"]}>
           <View>桌台：</View>
@@ -41,7 +43,7 @@ const Dinner = () => {
             prefix={<Icon type="write" color="gray" />}
             placeholder="口味要求、忌口等（可不填）"
             style={{
-              backgroundColor: "#2f2f2f",
+              backgroundColor: "#181d1f",
               border: "none",
               width: "450px",
             }}

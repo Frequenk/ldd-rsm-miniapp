@@ -1,8 +1,11 @@
-import React from "react";
-import { View } from "remax/wechat";
+import React, { useContext } from "react";
+import { View } from "remax/one";
 import styles from "./styles.less";
+import { CommonContext } from "@/app";
 
-const Key = ({ keyNumber, setNumber, type = "number" }) => {
+const Key = ({ keyNumber, type = "number" }) => {
+  const { setNumber } = useContext(CommonContext);
+
   const handleSetNumber = () => {
     setNumber((number) => {
       if (number.one === -1) {

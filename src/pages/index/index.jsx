@@ -1,10 +1,19 @@
 import * as React from "react";
-import { View, Text, Image } from "remax/wechat";
+import { View, Text, Image, reLaunch } from "remax/one";
 import styles from "./index.less";
-import { redirectTo } from "remax/one";
 import { Button } from "annar";
 
 export default () => {
+  const gogo = () => {
+    // if (1) {
+    //   {
+    //     reLaunch({
+    //       url: "/pages/confirm-order/index",
+    //     });
+    //   }
+    // }
+  };
+
   return (
     <View className={styles.app}>
       <View className={styles.header}>
@@ -18,8 +27,9 @@ export default () => {
           开始1
         </View>
         <Button
+          size="superlarge"
           onTap={() => {
-            redirectTo({
+            reLaunch({
               url: "/pages/login/index",
             });
           }}
@@ -27,19 +37,48 @@ export default () => {
           去登录页面
         </Button>
         <Button
+          size="superlarge"
           onTap={() => {
-            redirectTo({
+            reLaunch({
               url: "/pages/dinner/index",
             });
           }}
         >
           去开台页面
         </Button>
+        <Button
+          size="superlarge"
+          onTap={() => {
+            reLaunch({
+              url: "/pages/captcha/index",
+            });
+          }}
+        >
+          去验证页面
+        </Button>
+        <Button
+          size="superlarge"
+          onTap={() => {
+            reLaunch({
+              url: "/pages/menu/index",
+            });
+          }}
+        >
+          去菜单页面
+        </Button>
+        <Button
+          size="superlarge"
+          onTap={() => {
+            reLaunch({
+              url: "/pages/confirm-order/index",
+            });
+          }}
+        >
+          去确认订单页面
+        </Button>
       </View>
 
-      {redirectTo({
-        url: "/pages/captcha/index",
-      })}
+      {gogo()}
     </View>
   );
 };

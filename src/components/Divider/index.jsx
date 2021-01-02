@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "remax/wechat";
+import { View } from "remax/one";
 
 const Divider = ({ type = "horizontal", style = {} }) => {
   return type === "vertical" ? (

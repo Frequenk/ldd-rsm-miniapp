@@ -1,0 +1,53 @@
+@import "@/styles/variable.less";
+
+.container {
+  .background {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    opacity: 0.5;
+    &.background-close {
+      background-color: #ffffff;
+      opacity: 1;
+      z-index: -1;
+    }
+  }
+  .down {
+    position: fixed;
+    width: 100vw;
+    max-height: 80vh;
+    bottom: 0px;
+    background-color: #ffffff;
+    padding: 2.5vw;
+    border-radius: 4vw 4vw 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: bottom 0.3s ease-out;
+    z-index: 998;
+    &.down-close {
+      bottom: -80vh;
+      transition: bottom 0.2s;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 2.5vw;
+      border-bottom: 1px solid @color-gray;
+    }
+    .dish-list {
+      display: inline-block;
+      overflow: auto;
+      .bottom {
+        height: 26vw;
+        .text {
+          padding: 2.5vw 0px;
+          color: @color-gray;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

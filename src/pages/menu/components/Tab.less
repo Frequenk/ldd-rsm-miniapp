@@ -1,0 +1,27 @@
+@import "@/styles/variable.less";
+
+.tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  // line-height: 100px;
+  // text-align: center;
+  color: @color-gray;
+  font-size: @font-size-xs;
+  background-color: #f6f7f9;
+  color: @color-gray;
+  &.tab-selected {
+    color: @color-gray;
+    background-color: #ffffff;
+    font-weight: bold;
+  }
+  .text {
+    width: 100%;
+    text-align: center;
+    &.tab-selected-text {
+      width: 100%;
+      border-left: 10px solid @color-orange;
+    }
+  }
+}

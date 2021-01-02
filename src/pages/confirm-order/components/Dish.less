@@ -1,0 +1,46 @@
+@import "@/styles/variable.less";
+
+.dish {
+  width: 95vw;
+  height: 15vw;
+  background-color: #ffffff;
+  border-radius: 2.5vw;
+  margin: 2.5vw;
+  display: flex;
+  // box-shadow: 0 0 10px @color-gray;
+  .img {
+    height: 15vw;
+    width: 15vw;
+    border-radius: 2.5vw;
+  }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    margin: 0px 2vw;
+    width: 80vw;
+    .top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .name {
+        font-size: @font-size-xs;
+        font-weight: 600;
+      }
+      .price {
+        font-size: @font-size-md;
+        font-weight: bold;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .number {
+        color: gray;
+      }
+    }
+  }
+}
