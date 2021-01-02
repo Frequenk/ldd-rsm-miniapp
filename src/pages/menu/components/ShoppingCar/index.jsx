@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
-import { View } from "remax/wechat";
 import styles from "./index.less";
 import { ShoppingCarContext } from "@/app";
 import { Icon } from "annar";
 import ShoppingCarList from "./components/ShoppingCarList";
+import { navigateTo, View } from "remax/one";
+import { hideHomeButton } from "remax/wechat";
+// import { usePageEvent } from "remax/macro";
 
 const ShoppingCar = () => {
   const [shoppingCarList, setShoppingCarList] = useState(false);
   const { shoppingCarDishes, setShoppingCarDishes } = useContext(
     ShoppingCarContext
   );
+  // usePageEvent("onLoad", () => hideHomeButton());
   console.log("shoppingCarDishes", shoppingCarDishes);
 
   return (
@@ -36,12 +39,20 @@ const ShoppingCar = () => {
             </View>
           </View>
         </View>
-        <View className={styles.checkout}>去结算</View>
+        <View
+          className={styles.checkout}
+          onTap={() =>
+            navigateTo({
+              url: "/pages/confirm-order/index",
+            })
+          }
+        >
+          去结算
+        </View>
       </View>
       <ShoppingCarList
         visible={shoppingCarList}
         onCancel={() => setShoppingCarList(false)}
-        data={shoppingCarDishes}
       />
     </>
   );

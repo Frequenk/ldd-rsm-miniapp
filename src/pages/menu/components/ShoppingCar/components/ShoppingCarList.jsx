@@ -5,12 +5,12 @@ import { ShoppingCarContext } from "@/app";
 import { Icon } from "annar";
 import Dish from "./Dish";
 
-const ShoppingCarList = ({ visible, onCancel, data }) => {
+const ShoppingCarList = ({ visible, onCancel }) => {
   const { shoppingCarDishes, setShoppingCarDishes } = useContext(
     ShoppingCarContext
   );
+  const data = shoppingCarDishes || [];
   console.log("shoppingCarDishes", shoppingCarDishes);
-
   return (
     <View className={styles.container}>
       <View
