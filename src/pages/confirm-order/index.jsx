@@ -7,7 +7,7 @@ import OrderSteps from "@/components/OrderSteps";
 const ConfirmOrder = () => {
   return (
     <>
-      <OrderSteps />
+      <OrderSteps current={-1} />
       <OrderDetail />
       <OptionButton />
     </>
