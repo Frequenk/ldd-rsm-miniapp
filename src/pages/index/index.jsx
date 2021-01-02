@@ -66,6 +66,16 @@ export default () => {
         >
           去菜单页面
         </Button>
+        <Button
+          size="superlarge"
+          onTap={() => {
+            reLaunch({
+              url: "/pages/confirm-order/index",
+            });
+          }}
+        >
+          去确认订单页面
+        </Button>
       </View>
 
       {gogo()}

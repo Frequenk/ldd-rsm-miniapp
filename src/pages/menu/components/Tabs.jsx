@@ -25,6 +25,9 @@ const Tabs = ({ leftData, rightData }) => {
         {filterRightData.map((dish) => (
           <Dish key={dish.id} dish={dish} />
         ))}
+        <View className={styles.bottom}>
+          <View className={styles.text}>我是有底线的~</View>
+        </View>
       </View>
     </View>
   );

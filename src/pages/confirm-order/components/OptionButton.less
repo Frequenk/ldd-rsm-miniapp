@@ -1,0 +1,43 @@
+@import "@/styles/variable.less";
+
+.container {
+  display: flex;
+  width: 95vw;
+  height: 15vw;
+  border-radius: 15vw;
+  background-color: gold;
+  position: fixed;
+  bottom: 2.5vw;
+  left: 2.5vw;
+  z-index: 999;
+  overflow: hidden;
+  .left {
+    flex: 1 1 75%;
+    height: 100%;
+    background-color: #000000;
+    .content {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      margin-left: 4vw;
+      .detail {
+        margin-left: 3vw;
+        color: #ffffff;
+        .price {
+          font-size: @font-size-md;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .checkout {
+    flex: 1 1 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #fa8c35, @color-orange);
+  }
+}
