@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View } from "remax/one";
+import { View, reLaunch } from "remax/one";
 import styles from "./OptionButton.less";
 import { ShoppingCarContext } from "@/app";
 
@@ -23,7 +23,16 @@ const OptionButton = () => {
           </View>
         </View>
       </View>
-      <View className={styles.checkout}>确认订单</View>
+      <View
+        className={styles.checkout}
+        onTap={() => {
+          reLaunch({
+            url: "/pages/wait-company-confirm/index",
+          });
+        }}
+      >
+        确认订单
+      </View>
     </View>
   );
 };

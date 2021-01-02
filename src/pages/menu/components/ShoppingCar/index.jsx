@@ -4,16 +4,11 @@ import { ShoppingCarContext } from "@/app";
 import { Icon, Ling } from "annar";
 import ShoppingCarList from "./components/ShoppingCarList";
 import { navigateTo, View } from "remax/one";
-import { hideHomeButton } from "remax/wechat";
-// import { usePageEvent } from "remax/macro";
 
 const ShoppingCar = () => {
   const [shoppingCarList, setShoppingCarList] = useState(false);
-  const { shoppingCarDishes, setShoppingCarDishes } = useContext(
-    ShoppingCarContext
-  );
+  const { shoppingCarDishes } = useContext(ShoppingCarContext);
   const ling = useRef();
-  // usePageEvent("onLoad", () => hideHomeButton());
   console.log("shoppingCarDishes", shoppingCarDishes);
 
   return (
