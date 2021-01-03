@@ -86,6 +86,16 @@ export default () => {
         >
           去等待商家确认页面
         </Button>
+        <Button
+          size="superlarge"
+          onTap={() => {
+            reLaunch({
+              url: "/pages/pay/index",
+            });
+          }}
+        >
+          去支付页面
+        </Button>
       </View>
 
       {gogo()}
