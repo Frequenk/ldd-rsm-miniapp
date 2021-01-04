@@ -4,9 +4,7 @@ import styles from "./OptionButton.less";
 import { ShoppingCarContext } from "@/app";
 
 const OptionButton = () => {
-  const { shoppingCarDishes, setShoppingCarDishes } = useContext(
-    ShoppingCarContext
-  );
+  const { shoppingCarDishes } = useContext(ShoppingCarContext);
   return (
     <View className={styles.container}>
       <View className={styles.left}>

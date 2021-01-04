@@ -5,10 +5,8 @@ import { Stepper, Icon } from "annar";
 import { ShoppingCarContext } from "@/app";
 
 const Dish = ({ data: { dish } }) => {
-  const { name, img, price, dish_num } = dish;
-  const { shoppingCarDishes, setShoppingCarDishes } = useContext(
-    ShoppingCarContext
-  );
+  const { name, img, price } = dish;
+  const { shoppingCarDishes } = useContext(ShoppingCarContext);
   const number =
     shoppingCarDishes.find((item) => item.dish.id === dish.id)?.number || 0;
   return (
