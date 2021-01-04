@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import styles from "./index.less";
 import { ShoppingCarContext } from "@/app";
 import { Icon, Ling } from "annar";
@@ -7,10 +7,19 @@ import { navigateTo, View } from "remax/one";
 
 const ShoppingCar = () => {
   const [shoppingCarList, setShoppingCarList] = useState(false);
-  const { shoppingCarDishes } = useContext(ShoppingCarContext);
+  const { shoppingCarDishes, shoppingCarMsg } = useContext(ShoppingCarContext);
+
   const ling = useRef();
   console.log("shoppingCarDishes", shoppingCarDishes);
-
+  useEffect(() => {
+    console.log("shoppingCarMsg", shoppingCarMsg);
+    if (shoppingCarMsg) {
+      console.log("xxxxxxxxxxxxxxxxxxxxxx");
+      ling.current.show({
+        title: shoppingCarMsg,
+      });
+    }
+  }, [shoppingCarDishes, shoppingCarMsg]);
   return (
     <>
       <Ling ref={ling} />
