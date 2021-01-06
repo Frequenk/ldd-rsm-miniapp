@@ -12,6 +12,7 @@
     "build": "cross-env NODE_ENV=production remax build -t wechat"
   },
   "dependencies": {
+    "@holytiny/wxmp-socket.io-client": "^1.1.2",
     "@remax/plugin-less": "^1.0.0",
     "annar": "^2.0.7",
     "react": "^16.14.0",

@@ -1,22 +1,28 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import styles from "./index.less";
 import { ShoppingCarContext } from "@/app";
-import { Icon } from "annar";
+import { Icon, Ling } from "annar";
 import ShoppingCarList from "./components/ShoppingCarList";
 import { navigateTo, View } from "remax/one";
-import { hideHomeButton } from "remax/wechat";
-// import { usePageEvent } from "remax/macro";
 
 const ShoppingCar = () => {
   const [shoppingCarList, setShoppingCarList] = useState(false);
-  const { shoppingCarDishes, setShoppingCarDishes } = useContext(
-    ShoppingCarContext
-  );
-  // usePageEvent("onLoad", () => hideHomeButton());
-  console.log("shoppingCarDishes", shoppingCarDishes);
+  const { shoppingCarDishes, shoppingCarMsg } = useContext(ShoppingCarContext);
 
+  const ling = useRef();
+  console.log("shoppingCarDishes", shoppingCarDishes);
+  useEffect(() => {
+    console.log("shoppingCarMsg", shoppingCarMsg);
+    if (shoppingCarMsg) {
+      console.log("xxxxxxxxxxxxxxxxxxxxxx");
+      ling.current.show({
+        title: shoppingCarMsg,
+      });
+    }
+  }, [shoppingCarDishes, shoppingCarMsg]);
   return (
     <>
+      <Ling ref={ling} />
       <View className={styles.container}>
         <View
           className={styles.left}
@@ -41,11 +47,19 @@ const ShoppingCar = () => {
         </View>
         <View
           className={styles.checkout}
-          onTap={() =>
-            navigateTo({
-              url: "/pages/confirm-order/index",
-            })
-          }
+          onTap={() => {
+            if (shoppingCarDishes.length > 0)
+              navigateTo({
+                url: "/pages/confirm-order/index",
+              });
+            else {
+              ling.current.show({
+                title: "购物车不能为空！",
+                icon: "roundclosefill",
+                iconColor: "#666",
+              });
+            }
+          }}
         >
           去结算
         </View>

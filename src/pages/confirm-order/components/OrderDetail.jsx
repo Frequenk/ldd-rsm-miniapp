@@ -6,9 +6,7 @@ import { Icon } from "annar";
 import Dish from "./Dish";
 
 const OrderDetail = () => {
-  const { shoppingCarDishes, setShoppingCarDishes } = useContext(
-    ShoppingCarContext
-  );
+  const { shoppingCarDishes } = useContext(ShoppingCarContext);
   const data = shoppingCarDishes || [];
   return (
     <View className={styles["dish-list"]}>
