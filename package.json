@@ -17,7 +17,6 @@
     "annar": "^2.0.7",
     "react": "^16.14.0",
     "remax": "^2.9.1",
-    "wechat-request": "^2.3.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.2"
