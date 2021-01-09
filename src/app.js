@@ -2,7 +2,7 @@ import React, { createContext, useState, useRef } from "react";
 import "./app.less";
 import "annar/dist/annar.css";
 import { useAppEvent } from "remax/macro";
-import { queryUpgradePackages } from "@/services/commons";
+// import { queryUpgradePackages } from "@/services/commons";
 import io from '@holytiny/wxmp-socket.io-client';
 
 export const CommonContext = createContext({});

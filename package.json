@@ -15,8 +15,10 @@
     "@holytiny/wxmp-socket.io-client": "^1.1.2",
     "@remax/plugin-less": "^1.0.0",
     "annar": "^2.0.7",
+    "axios": "^0.21.1",
+    "engine.io-parser": "^4.0.2",
     "react": "^16.14.0",
-    "remax": "^2.9.1",
+    "remax": "^2.9.1"
   },
   "devDependencies": {
     "cross-env": "^7.0.2"
