@@ -16,6 +16,7 @@
     "@remax/plugin-less": "^1.0.0",
     "annar": "^2.0.7",
     "axios": "^0.21.1",
+    "axios-miniprogram-adapter": "^0.3.2",
     "engine.io-parser": "^4.0.2",
     "react": "^16.14.0",
     "remax": "^2.9.1"
