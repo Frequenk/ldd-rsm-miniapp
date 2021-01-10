@@ -12,6 +12,8 @@ axios.defaults.adapter = mpAdapter
 
 export const CommonContext = createContext({});
 export const ShoppingCarContext = createContext({});
+export const PageLoadingContext = createContext({});
+
 
 let setShoppingCarDishes;
 
@@ -19,12 +21,14 @@ const App = (props) => {
   console.log('props', props)
   const [shoppingCarDishes, setDishes] = useState([]);
   const [shoppingCarMsg, setMsg] = useState('');
+  const [pageLoading, setPageLoading] = useState(false);
   const user = {};
   user.name = '王小明'
 
 
 
   useAppEvent("onLaunch", async () => {
+    setPageLoading(true)
     // 初始化socket及购物车函数
     setShoppingCarDishes = shoppingCarOperate(1, user?.name, setMsg, setDishes);
 
@@ -56,13 +60,16 @@ const App = (props) => {
 
     const users = await axios.get(`user/token`);
     console.log('users', users)
+    setPageLoading(false)
   });
 
 
   return (
-    <ShoppingCarContext.Provider value={{ shoppingCarDishes, setShoppingCarDishes, shoppingCarMsg }}>
-      {props.children}
-    </ShoppingCarContext.Provider>
+    <PageLoadingContext.Provider value={{ pageLoading, setPageLoading }}>
+      <ShoppingCarContext.Provider value={{ shoppingCarDishes, setShoppingCarDishes, shoppingCarMsg }}>
+        {props.children}
+      </ShoppingCarContext.Provider>
+    </PageLoadingContext.Provider>
   )
 };
 
