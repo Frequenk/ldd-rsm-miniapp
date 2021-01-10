@@ -101,6 +101,16 @@ export default () => {
         >
           去支付页面
         </Button>
+        <Button
+          size="superlarge"
+          onTap={() => {
+            reLaunch({
+              url: "/pages/start-loading/index",
+            });
+          }}
+        >
+          去开屏加载页面
+        </Button>
       </View>
 
       {gogo()}
