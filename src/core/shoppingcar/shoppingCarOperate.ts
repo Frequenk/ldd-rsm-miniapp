@@ -4,12 +4,12 @@ let count = 0;
 var timerId = null;
 let lastDishId;
 const shoppingCarOperate = (
-  tableid: number,
+  tableId: number,
   userName: string,
   setMsg: any,
   setDishes: any
 ) => {
-  const socket = sk.connect(tableid);
+  const socket = sk.connect(tableId);
 
   socket.on("shoppingCar", function (data) {
     console.log("shoppingCar", data);
