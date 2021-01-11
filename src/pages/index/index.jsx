@@ -111,6 +111,16 @@ export default () => {
         >
           去开屏加载页面
         </Button>
+        <Button
+          size="superlarge"
+          onTap={() => {
+            reLaunch({
+              url: "/pages/no-table/index",
+            });
+          }}
+        >
+          去no-table页面
+        </Button>
       </View>
 
       {gogo()}
