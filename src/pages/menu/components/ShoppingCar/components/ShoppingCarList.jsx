@@ -18,9 +18,7 @@ const ShoppingCarList = ({ visible, onCancel }) => {
           !visible && styles["background-close"]
         }`}
         onTap={onCancel}
-      >
-        66
-      </View>
+      ></View>
       <View className={`${styles.down} ${!visible && styles["down-close"]}`}>
         <View className={styles.header}>
           <View>已选商品</View>

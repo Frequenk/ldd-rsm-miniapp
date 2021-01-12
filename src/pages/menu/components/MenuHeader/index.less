@@ -1,0 +1,31 @@
+@import "@/styles/variable.less";
+
+.container {
+  height: 10vw;
+  border-bottom: 1px solid @color-orange;
+  box-shadow: 0 0 10px @color-orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 2.5vw;
+  .left {
+    display: flex;
+    align-items: center;
+    .img {
+      width: 6.5vw;
+      height: 6.5vw;
+      border-radius: 6.5vw;
+      margin-right: 1.5vw;
+    }
+  }
+  .right {
+    line-height: 10vw;
+    .captcha {
+      background-color: @color-orange;
+      color: #ffffff;
+      font-size: @font-size-md;
+      font-weight: bold;
+      border-radius: 2.5vw;
+    }
+  }
+}
