@@ -1,9 +1,12 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { View, Text, Image, reLaunch } from "remax/one";
 import styles from "./index.less";
 import { Button } from "annar";
+import PageLoading from "@/components/PageLoading";
+import { PageLoadingContext } from "@/app";
 
 export default () => {
+  const { pageLoading, setPageLoading } = useContext(PageLoadingContext);
   const gogo = () => {
     // if (1) {
     //   {
@@ -16,6 +19,8 @@ export default () => {
 
   return (
     <View className={styles.app}>
+      {pageLoading && <PageLoading />}
+
       <View className={styles.header}>
         <Image
           src="https://gw.alipayobjects.com/mdn/rms_b5fcc5/afts/img/A*OGyZSI087zkAAAAAAAAAAABkARQnAQ"
@@ -95,6 +100,26 @@ export default () => {
           }}
         >
           去支付页面
+        </Button>
+        <Button
+          size="superlarge"
+          onTap={() => {
+            reLaunch({
+              url: "/pages/start-loading/index",
+            });
+          }}
+        >
+          去开屏加载页面
+        </Button>
+        <Button
+          size="superlarge"
+          onTap={() => {
+            reLaunch({
+              url: "/pages/no-table/index",
+            });
+          }}
+        >
+          去no-table页面
         </Button>
       </View>
 
