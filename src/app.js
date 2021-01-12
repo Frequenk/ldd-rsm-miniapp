@@ -6,7 +6,7 @@ import { useAppEvent } from "remax/macro";
 import { shoppingCarOperate } from '@/core/shoppingcar';
 import axios from 'axios'
 import mpAdapter from 'axios-miniprogram-adapter'
-import { login, setStorageSync, getStorageSync } from "remax/wechat";
+import { login, setStorageSync, getStorageSync, showToast } from "remax/wechat";
 import { reLaunch } from "remax/one";
 import { tableStatusType } from '@/utils/constants'
 axios.defaults.adapter = mpAdapter
@@ -32,10 +32,12 @@ const App = (props) => {
   useAppEvent("onLaunch", async () => {
     // 初始化请求工具
     axios.defaults.baseURL = 'http://leiduoduo.free.idcfengye.com';
-
     // 添加响应拦截器
     axios.interceptors.response.use(function (response) {
-      const { data: { data } } = response;
+      const { data: { data, errorcode, msg } } = response;
+      if (errorcode !== 0)
+        showToast({ title: msg, icon: 'none', duration: 3000 })
+
       return data;
     }, function (error) {
       return Promise.reject(error);
@@ -77,20 +79,20 @@ const App = (props) => {
     });
 
     // 如果桌子未开台则进入开台页面
-    if (tableStatusType[table.state] === '空闲') {
-      reLaunch({
-        url: "/pages/dinner/index",
-      });
-      return;
-    }
+    // if (tableStatusType[table.state] === '空闲') {
+    //   reLaunch({
+    //     url: "/pages/dinner/index",
+    //   });
+    //   return;
+    // }
 
     // 如果桌子已开台则进入验证码页面
-    if (tableStatusType[table.state] === '使用中') {
-      reLaunch({
-        url: "/pages/captcha/index",
-      });
-      return;
-    }
+    // if (tableStatusType[table.state] === '使用中') {
+    //   reLaunch({
+    //     url: "/pages/captcha/index",
+    //   });
+    //   return;
+    // }
     reLaunch({
       url: "/pages/index/index",
     });
