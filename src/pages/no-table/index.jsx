@@ -13,7 +13,8 @@ const NoTable = () => {
       subTitle={
         <>
           <View>您没有通过扫描二维码进入本小程序，</View>
-          <View>或扫描的二维码已失效</View>
+          <View>或者扫描的二维码已失效</View>
+          <View>或者小程序被外星人劫持了</View>
         </>
       }
     />
