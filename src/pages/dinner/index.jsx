@@ -53,7 +53,7 @@ const Dinner = () => {
 
   return (
     <>
-      {pageLoading && <PageLoading />}
+      {pageLoading && <PageLoading text="开台中" />}
       <View className={styles.container}>
         <View className={styles["padding-container"]}>
           <View className={styles.company}>
