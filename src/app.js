@@ -36,7 +36,7 @@ const App = (props) => {
     axios.interceptors.response.use(function (response) {
       const { data: { data, errorcode, msg } } = response;
       if (errorcode !== 0)
-        showToast({ title: msg, icon: 'none', duration: 3000 })
+        showToast({ title: msg, icon: 'none' })
 
       return data;
     }, function (error) {
