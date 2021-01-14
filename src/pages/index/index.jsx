@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { View, Text, Image, reLaunch } from "remax/one";
 import styles from "./index.less";
 import { Button } from "annar";
-import PageLoading from "@/components/PageLoading";
+// import PageLoading from "@/components/PageLoading";
 import { PageLoadingContext } from "@/app";
 
 export default () => {
@@ -19,7 +19,7 @@ export default () => {
 
   return (
     <View className={styles.app}>
-      {pageLoading && <PageLoading />}
+      {/* {pageLoading && <PageLoading />} */}
 
       <View className={styles.header}>
         <Image
