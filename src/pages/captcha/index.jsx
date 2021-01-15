@@ -7,6 +7,8 @@ import { CommonContext } from "@/app";
 import { validateCaptcha } from "./service";
 import PageLoading from "@/components/PageLoading";
 import { InitialStateContext } from "@/app";
+import GetAuth from "./components/GetAuth";
+import { getUserInfo } from "remax/wechat";
 
 const Captcha = () => {
   const {
@@ -21,6 +23,27 @@ const Captcha = () => {
     four: -1,
   });
   const [loading, setLoading] = useState(false);
+  const [getAuthVisible, setGetAuthVisible] = useState(false);
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const { userInfo: userData } = await getUserInfo();
+        console.log("userData", userData);
+        const userInfo = {
+          name: userData.nickName,
+          avatar: userData.avatarUrl,
+        };
+        setInitialState({
+          ...initialState,
+          user: userInfo,
+        });
+      } catch {
+        setGetAuthVisible(true);
+      }
+    };
+    getUser();
+  }, []);
 
   const submit = async () => {
     setLoading(true);
@@ -58,6 +81,7 @@ const Captcha = () => {
   return (
     <>
       {loading && <PageLoading text="验证中" />}
+      {getAuthVisible && <GetAuth onCancel={() => setGetAuthVisible(false)} />}
       <View className={styles.container}>
         <View>
           <View className={styles["tip-text"]}>

@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  .content {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    background-color: #000000;
+    opacity: 0.5;
+  }
+  .button {
+    z-index: 1001;
+  }
+  .text {
+    width: 65vw;
+    z-index: 1001;
+    color: #f56330;
+    margin-bottom: 5vw;
+  }
+}
