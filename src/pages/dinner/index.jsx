@@ -31,6 +31,7 @@ const Dinner = () => {
         ...initialState,
         captcha: res.captcha,
         dinner_code: res.dinner_code,
+        user: userInfo,
       });
       reLaunch({
         url: "/pages/menu/index",
