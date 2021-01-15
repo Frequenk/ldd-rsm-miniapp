@@ -3,7 +3,6 @@ import "./app.less";
 import "annar/dist/annar.css";
 import { useAppEvent } from "remax/macro";
 // import { queryUpgradePackages } from "@/services/commons";
-import { shoppingCarOperate } from '@/core/shoppingcar';
 import axios from 'axios'
 import mpAdapter from 'axios-miniprogram-adapter'
 import { login, setStorageSync, getStorageSync, showToast } from "remax/wechat";
@@ -17,7 +16,6 @@ export const ShoppingCarContext = createContext({});
 export const PageLoadingContext = createContext({});
 
 
-let setShoppingCarDishes;
 
 const App = (props) => {
   const tableId = 1;
@@ -58,8 +56,7 @@ const App = (props) => {
     const { table, restaurant } = restaurantAndTableData
 
 
-    // 初始化socket及购物车函数
-    // setShoppingCarDishes = shoppingCarOperate(initialState?.table.id, initialState?.user?.name, setMsg, setDishes);
+
 
 
 
@@ -102,7 +99,7 @@ const App = (props) => {
   return (
     <InitialStateContext.Provider value={{ initialState, setInitialState }}>
       <PageLoadingContext.Provider value={{ pageLoading, setPageLoading }}>
-        <ShoppingCarContext.Provider value={{ shoppingCarDishes, setShoppingCarDishes, shoppingCarMsg }}>
+        <ShoppingCarContext.Provider value={{ shoppingCarDishes, shoppingCarMsg, setMsg, setDishes }}>
           {props.children}
         </ShoppingCarContext.Provider>
       </PageLoadingContext.Provider>
