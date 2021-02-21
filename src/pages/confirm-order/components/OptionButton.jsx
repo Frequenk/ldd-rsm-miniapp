@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { View, reLaunch } from "remax/one";
+import { View } from "remax/one";
 import styles from "./OptionButton.less";
 import { ShoppingCarContext } from "@/app";
 
-const OptionButton = () => {
+const OptionButton = ({ submit }) => {
   const { shoppingCarDishes } = useContext(ShoppingCarContext);
   return (
     <View className={styles.container}>
@@ -21,14 +21,7 @@ const OptionButton = () => {
           </View>
         </View>
       </View>
-      <View
-        className={styles.checkout}
-        onTap={() => {
-          reLaunch({
-            url: "/pages/wait-company-confirm/index",
-          });
-        }}
-      >
+      <View className={styles.checkout} onTap={submit}>
         确认订单
       </View>
     </View>

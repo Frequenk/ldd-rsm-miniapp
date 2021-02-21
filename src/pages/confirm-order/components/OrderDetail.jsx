@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { View } from "remax/one";
 import styles from "./OrderDetail.less";
-import { ShoppingCarContext } from "@/app";
-import { Icon } from "annar";
 import Dish from "./Dish";
 
-const OrderDetail = () => {
-  const { shoppingCarDishes } = useContext(ShoppingCarContext);
+const OrderDetail = ({ shoppingCarDishes }) => {
   const data = shoppingCarDishes || [];
   return (
     <View className={styles["dish-list"]}>
